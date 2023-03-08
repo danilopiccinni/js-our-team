@@ -52,5 +52,12 @@ let membriTeam = [
     }
 ]
 
-console.log(membriTeam)
 
+for (let chiave in membriTeam) {
+
+    console.log(membriTeam[chiave].nome)
+    console.log(membriTeam[chiave].ruolo)
+    console.log(membriTeam[chiave].foto)
+    console.log('-------------------')
+
+}
