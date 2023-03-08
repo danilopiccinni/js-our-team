@@ -61,3 +61,11 @@ for (let chiave in membriTeam) {
     console.log('-------------------')
 
 }
+
+let listaMembriEl = document.getElementById ('lista-membri')
+
+for (let chiave in membriTeam) {
+    let membro = document.createElement ('li')
+    membro.innerText = membriTeam[chiave].nome+ ' - ' + membriTeam[chiave].ruolo+ ' - ' + membriTeam[chiave].foto
+    listaMembriEl.append(membro)
+}
