@@ -66,6 +66,6 @@ let listaMembriEl = document.getElementById ('lista-membri')
 
 for (let chiave in membriTeam) {
     let membro = document.createElement ('li')
-    membro.innerText = membriTeam[chiave].nome+ ' - ' + membriTeam[chiave].ruolo+ ' - ' + membriTeam[chiave].foto
+    membro.innerHTML = membriTeam[chiave].nome+ ' - ' + membriTeam[chiave].ruolo+ ' - ' + '<img src="../img/'+ membriTeam[chiave].foto + '"alt="">'
     listaMembriEl.append(membro)
 }
