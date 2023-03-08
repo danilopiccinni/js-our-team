@@ -3,3 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 10px 100px;
+    margin-bottom: 50px;
+} 
+
+#lista-membri {
+    max-width: calc(400px * 3 + (20px * 2));
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    
+}

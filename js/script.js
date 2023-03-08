@@ -52,7 +52,7 @@ let membriTeam = [
     }
 ]
 
-
+// fa apparire con un ciclo for-in i dati di ciascun membro in consol
 for (let chiave in membriTeam) {
 
     console.log(membriTeam[chiave].nome)
@@ -62,28 +62,57 @@ for (let chiave in membriTeam) {
 
 }
 
+// bersaglio l'elemento in pagina da usare come output per poi appenderci i membri da far comparire in pagina
 let listaMembriEl = document.getElementById ('lista-membri')
 
+// ciclo creato per creare un 'li' per ogni membro 
 for (let chiave in membriTeam) {
+    // crea l'elemento 'li
     let membro = document.createElement ('li')
-    membro.style.textAlign = 'center'
-    membro.style.width = 'fit-content'
-    membro.style.backgroundColor = 'grey'
 
+// dati vari stili all'elemento prima creato 
+    // allineamento testo
+    membro.style.textAlign = 'center'
+    // la misura massima che della largezza ( in questo caso optato per adattarsi alla foto)
+    membro.style.width = 'fit-content'
+    // sfondo
+    membro.style.backgroundColor = 'rgba(128, 128, 128, 0.364)'
+    // tolto il marcatore creato in automatico essendo un 'li'
+    membro.style.listStyleType = 'none'
+
+    // appendiamo l'elemento 'li' creato all'elemento che vogliamo usare come output in pagina
     listaMembriEl.append(membro)
+
     
+// crea le varie sezione della 'card'(li) che vogliamo far vedere in pagina prenderndo i valori dalla nostra lista membri dichiarata in un array all'inizio del progetto
+
+    //sezione foto nel 'li'
+        // crea un div dedicato a contenere successivamente l'immagine assegnandolo a una variabile
     let contFoto = document.createElement ('div')
+        // assegna all'elemento creato un contenuto HTML per un immagine richiamando al suo interno il valore della foto del membro 
     contFoto.innerHTML = '<img src="../img/'+ membriTeam[chiave].foto + '"alt="">'
+        // appende quest'ultimo al 'li'
     membro.append(contFoto)
 
+
+    // sezione nome nel 'li'
+        // crea un div dedicato a contenere il nome del membro assegnandolo a una variabile
     let nome =document.createElement ('div')
+        // assegna al suo interno (innerTEXT) il valore 'nome' del membro 
     nome.innerText=membriTeam[chiave].nome
+        // appendiamo quest'ultimo al 'li'
     membro.append(nome)
 
+    // ruolo nel 'li'
+        // crea un div dedicato a contenere il ruolo del membro assegnandolo a una variabile
     let ruolo = document.createElement('div')
+        // assegna al suo interno (innerTEXT) il valore 'ruolo' del membro 
     ruolo.innerText = membriTeam[chiave].ruolo
+        // appendiamo quest'ultimo al 'li'
     membro.append(ruolo)
 
-
+// fa apparire come stringa in pagina i dati di  ogni membro
+// in successione modificato per far apparire anche la foto come tale e non come stringa (bonus1)
     // membro.innerHTML = membriTeam[chiave].nome+ ' - ' + membriTeam[chiave].ruolo+ ' - ' + '<img src="../img/'+ membriTeam[chiave].foto + '"alt="">'
+// commentato il tutto per eseguire il bonus 2
 }
