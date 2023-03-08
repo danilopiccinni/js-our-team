@@ -66,6 +66,24 @@ let listaMembriEl = document.getElementById ('lista-membri')
 
 for (let chiave in membriTeam) {
     let membro = document.createElement ('li')
-    membro.innerHTML = membriTeam[chiave].nome+ ' - ' + membriTeam[chiave].ruolo+ ' - ' + '<img src="../img/'+ membriTeam[chiave].foto + '"alt="">'
+    membro.style.textAlign = 'center'
+    membro.style.width = 'fit-content'
+    membro.style.backgroundColor = 'grey'
+
     listaMembriEl.append(membro)
+    
+    let contFoto = document.createElement ('div')
+    contFoto.innerHTML = '<img src="../img/'+ membriTeam[chiave].foto + '"alt="">'
+    membro.append(contFoto)
+
+    let nome =document.createElement ('div')
+    nome.innerText=membriTeam[chiave].nome
+    membro.append(nome)
+
+    let ruolo = document.createElement('div')
+    ruolo.innerText = membriTeam[chiave].ruolo
+    membro.append(ruolo)
+
+
+    // membro.innerHTML = membriTeam[chiave].nome+ ' - ' + membriTeam[chiave].ruolo+ ' - ' + '<img src="../img/'+ membriTeam[chiave].foto + '"alt="">'
 }
